@@ -8,10 +8,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/inventory-service" />
             <option value="$PROJECT_DIR$/order-service" />
             <option value="$PROJECT_DIR$/product-service" />
           </set>
         </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/local-docker-file" />
       </GradleProjectSettings>
     </option>
   </component>

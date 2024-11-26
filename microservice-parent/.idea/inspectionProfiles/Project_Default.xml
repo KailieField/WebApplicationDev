@@ -164,7 +164,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="AutoBoxing" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="ignoreAddedToCollection" value="false" />
       </scope>
       <option name="ignoreAddedToCollection" value="false" />
@@ -822,7 +822,7 @@
       <scope name="Project Files" level="WEAK WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="DuplicateStringLiteralInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="MIN_STRING_LENGTH" value="5" />
         <option name="IGNORE_PROPERTY_KEYS" value="false" />
       </scope>
@@ -1141,7 +1141,7 @@
       <option name="nonNlsCommentPattern" value="NON-NLS" />
     </inspection_tool>
     <inspection_tool class="HardcodedFileSeparators" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="m_recognizeExampleMediaType" value="false" />
       </scope>
       <option name="m_recognizeExampleMediaType" value="false" />
@@ -1932,7 +1932,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="NonFinalStaticVariableUsedInClassInitialization" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="NonFinalUtilityClass" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2084,7 +2084,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="OnDemandImport" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="OnlyOneElementUsed" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2343,7 +2343,9 @@
     <inspection_tool class="PublicMethodNotExposedInInterface" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true">
         <option name="ignorableAnnotations">
-          <value />
+          <value>
+            <item value="org.springframework.web.bind.annotation.GetMapping" />
+          </value>
         </option>
         <option name="onlyWarnIfContainingClassImplementsAnInterface" value="false" />
       </scope>
@@ -2743,7 +2745,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="StaticImport" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="StaticInheritance" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />

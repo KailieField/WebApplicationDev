@@ -20,6 +20,36 @@ services:
     networks:
       - spring
 
+  order-service:
+    image: product-service
+    ports:
+      - "8085:8085"
+    build:
+      context: ./product-service
+      dockerfile: ./Dockerfile
+    container_name: product-service
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mongodb
+    networks:
+      - spring
+
+  inventory-service:
+    image: product-service
+    ports:
+      - "8086:8086"
+    build:
+      context: ./product-service
+      dockerfile: ./Dockerfile
+    container_name: product-service
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mongodb
+    networks:
+      - spring
+
   mongodb:
     image: mongo:latest
     ports:
@@ -46,6 +76,28 @@ services:
       - mongodb
     networks:
       - spring
+
+  pg-inventory-service:
+    image: postgres
+    ports:
+      - "5434:5434"
+    container_name: pg-inventory-service
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=order-service
+    volumes:
+      - ./data/order:/var/lib/postgresql/data
+      - ./data/order/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "8888:80"
+    container_name: pgadmin-single
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.ca
+      - PGADMIN_DEFAULT_PASSWORD=password
 
 
 
