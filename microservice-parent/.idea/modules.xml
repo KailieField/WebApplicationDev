@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/ca.gbc.microservice-parent.inventory-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/ca.gbc.microservice-parent.inventory-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/ca.gbc.microservice-parent.product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/ca.gbc.microservice-parent.product-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comp3095_ICE2.microservice-parent.main.iml" filepath="$PROJECT_DIR$/.idea/modules/comp3095_ICE2.microservice-parent.main.iml" />
     </modules>
