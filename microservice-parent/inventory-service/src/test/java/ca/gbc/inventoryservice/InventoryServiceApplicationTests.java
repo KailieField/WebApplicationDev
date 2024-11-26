@@ -3,6 +3,7 @@ package ca.gbc.inventoryservice;
 
 import ca.gbc.inventoryservice.service.InventoryService;
 
+import io.restassured.RestAssured;
 import org.mockito.Mockito;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
@@ -15,7 +16,6 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Import;
 
-import io.restassured.RestAssured;
 import static io.restassured.RestAssured.given;
 import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.utility.TestcontainersConfiguration;

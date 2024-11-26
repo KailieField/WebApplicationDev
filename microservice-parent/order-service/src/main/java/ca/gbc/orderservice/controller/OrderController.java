@@ -20,6 +20,6 @@ public class OrderController {
 	public String placeOrder(@RequestBody OrderRequest orderRequest){
 
 		orderService.placeOrder(orderRequest);
-		return "Order Placed";
+		return "Order placed successfully";
 	}
 }

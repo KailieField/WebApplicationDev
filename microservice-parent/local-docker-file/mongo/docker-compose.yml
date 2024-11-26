@@ -1,7 +1,6 @@
-version: '3.9'
+version: '4.0'
 
 services:
-
   mongodb:
     image: mongo:latest
     ports:
@@ -11,9 +10,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - ./data/mongo/products:/data/db
-      - ./init/mongo/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    networks:
-      - spring
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    container_name: local-mongodb
 
   mongo-express:
     image: mongo-express
@@ -26,5 +24,7 @@ services:
     container_name: local-mongo-express
     depends_on:
       - mongodb
-    networks:
-      - spring
+
+#volumes:
+#  mongo-data:
+#    driver: local
