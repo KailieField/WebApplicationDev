@@ -24,3 +24,8 @@ docker-infra/mongo/data
 # AVOID HIDDEN FILES
 *.doc
 *.docx
+
+
+# making sure parent isnt being ignore
+!microservice-parent/
+!microservice-parent/**
