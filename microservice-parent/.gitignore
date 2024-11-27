@@ -1,0 +1,22 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Gradle
+.gradle/
+build/
+
+# Log Files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Excluded Target Folders
+target/
+out/
+
+# Ignore Docker-Related files
+docker-infra/data/
+docker-infra/mongo/data
