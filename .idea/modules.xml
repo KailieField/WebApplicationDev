@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/ca.gbc.microservice-parent.inventory-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/ca.gbc.microservice-parent.inventory-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service/ca.gbc.microservice-parent.order-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service/ca.gbc.microservice-parent.order-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/ca.gbc.microservice-parent.product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/ca.gbc.microservice-parent.product-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/microservice-parent.inventory-service.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/microservice-parent.inventory-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/microservice-parent.inventory-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/microservice-parent.inventory-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service/microservice-parent.inventory-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service/microservice-parent.inventory-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-parent.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-parent.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service/microservice-parent.order-service.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service/microservice-parent.order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service/microservice-parent.order-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service/microservice-parent.order-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service/microservice-parent.order-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service/microservice-parent.order-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/microservice-parent.product-service.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/microservice-parent.product-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/microservice-parent.product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/microservice-parent.product-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/microservice-parent.product-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/microservice-parent.product-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-parent.test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-parent.test.iml" />
+    </modules>
+  </component>
+</project>

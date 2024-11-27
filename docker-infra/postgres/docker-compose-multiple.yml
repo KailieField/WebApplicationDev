@@ -13,7 +13,7 @@ services:
       - "5434:5432"
     environment:
       PGDATA: /data/postgres
-      POSTGRES_DB: inventory-service
+#      POSTGRES_DB: inventory-service
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     volumes:
@@ -38,7 +38,11 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmingui-local-multiple
     ports:
-      - "8888:80"
+      - "8889:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: user@domain.ca
       PGADMIN_DEFAULT_PASSWORD: password
+
+networks:
+  spring:
+    driver: bridge
