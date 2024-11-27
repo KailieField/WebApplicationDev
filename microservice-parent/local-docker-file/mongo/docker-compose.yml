@@ -1,30 +1,55 @@
-version: '4.0'
+#version: '4.0'
 
+#----------------------------------------------------------------------------------------------------
+# SERVICES ------ PURPOSE: main docker-compose for spinning up MongoDB && Mongo-Express services
+#----------------------------------------------------------------------------------------------------
 services:
+
   mongodb:
     image: mongo:latest
+    container_name: mongodb-local-docker-file # ---- helping to debug/visualize on console/docker
     ports:
-      - "27017:27017"
+      - "27018:27017"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
-      - ./data/mongo/products:/data/db
-      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    container_name: local-mongodb
+      - ./data/mongo/local:/data/db # ---- bind mount for MongoDB data
+      - ./init/mongo/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - spring
 
   mongo-express:
     image: mongo-express
+    container_name: mongo-express-local-docker-file # ---- helping to debug/visualize on console/docker
     ports:
-      - "8081:8081"
+      - "8082:8081"
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
-    container_name: local-mongo-express
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=password
     depends_on:
       - mongodb
+    networks:
+      - spring
 
-#volumes:
-#  mongo-data:
-#    driver: local
+# ----- decoupling from host filesystem to be able to move across environments
+volumes:
+  mongo-db:
+    driver: local
+
+# ----- explicitly defining network as Docker default network can be unpredictable
+networks:
+  spring:
+    driver: bridge
+
+# ------ mongo-express depends on mongodb not the other way around.
+# ------ mongo-express is web based, it requires mongodb to run first when
+# ------ docker-compose.
+# ------ BOTH part of the spring network --> meaning they can communicate
+
+
+
+# ------ used for production or primary dev.
