@@ -50,7 +50,7 @@ services:
       - spring
 
 #---------------------------------------------------------------------------------------------------------------------
-# MONGODB/MONGO-EXPRESS
+# MONGODB/MONGO-EXPRESS --> MAIN DEPLOYMENT CONFIGURATION
 #---------------------------------------------------------------------------------------------------------------------
   mongodb:
     image: mongo:latest
@@ -61,8 +61,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
     volumes:
-      - ./data/mongo/products:/data/db
-      - ./init/mongo/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./docker-infra/mongo/data/db:/data/db
+      - ./docker-infra/mongo/init/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
       - spring
 
@@ -96,8 +96,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     volumes:
-      - ./data/postgres/inventory:/var/lib/postgresql/data
-      - ./data/postgres/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker-infra/postgres/data/inventory:/var/lib/postgresql/data
+      - ./docker-infra/postgres/init/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - spring
 
@@ -112,8 +112,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     volumes:
-      - ./data/postgres/order:/var/lib/postgresql/data
-      - ./init/postgres/oder/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker-infra/postgres/data/order:/var/lib/postgresql/data
+      - ./docker-infra/postgres/init/order/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - spring
 

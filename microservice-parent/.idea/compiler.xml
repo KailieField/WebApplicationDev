@@ -14,7 +14,7 @@
         <module name="comp3095_ICE2.microservice-parent.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="22">
+    <bytecodeTargetLevel target="23">
       <module name="ca.gbc.microservice-parent" target="23" />
       <module name="ca.gbc.microservice-parent.main" target="23" />
       <module name="ca.gbc.microservice-parent.test" target="23" />

@@ -15,7 +15,6 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/local-docker-file" />
       </GradleProjectSettings>
     </option>
   </component>
