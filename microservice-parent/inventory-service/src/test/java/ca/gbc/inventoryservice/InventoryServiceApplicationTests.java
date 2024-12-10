@@ -1,12 +1,8 @@
 package ca.gbc.inventoryservice;
 
 
-import ca.gbc.inventoryservice.service.InventoryService;
-
 import io.restassured.RestAssured;
-import org.mockito.Mockito;
-import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.when;
+import org.hamcrest.Matchers;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,9 +12,10 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Import;
 
-import static io.restassured.RestAssured.given;
-import org.testcontainers.containers.MongoDBContainer;
+import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.TestcontainersConfiguration;
+
+import java.io.IOException;
 
 
 @Import(TestcontainersConfiguration.class)
@@ -26,38 +23,97 @@ import org.testcontainers.utility.TestcontainersConfiguration;
 class InventoryServiceApplicationTests {
 
 	@ServiceConnection
-	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:latest");
+	static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:latest")
+			.withDatabaseName("inventory-service-test")
+			.withUsername("admin")
+			.withPassword("password");
 
 	@LocalServerPort
 	private Integer port;
 
 	@BeforeEach
 	void setUp() {
+
 		RestAssured.baseURI = "http://localhost";
 		RestAssured.port = port;
 	}
 
 	static {
-		mongoDBContainer.start();
+
+		postgreSQLContainer.start();
 	}
 
+
+	///  -- TESTS --
+
 	@Test
-	void testInStock(){
+	void isInStockTest() throws IOException, InterruptedException {
 
-		String skuCode = "skuCode123";
-		Integer quantity = 5;
+		String insertQuery = """
+				
+				INSERT INTO t_inventory (sku_code, quantity)
+				VALUES ('SKU001, 100);
 
-		InventoryService mockInventoryService = Mockito.mock(InventoryService.class);
-		when(mockInventoryService.isInStock(skuCode, quantity)).thenReturn(true);
+				""";
+		postgreSQLContainer.execInContainer(
+				"psql",
+				"-U",
+				"admin",
+				"-d",
+				"inventory-service-test",
+				"-c",
+				insertQuery
+		);
 
-		given()
-				.param("skuCode", skuCode)
-				.param("quantity", quantity)
+		// -- BDD STYLE TEST FOR isInStock ENDPOINT --
+		RestAssured.given()
+				.contentType("application/json")
+				.queryParam("sku_code", "SKU001")
+				.queryParam("quantity", 50)
 				.when()
 				.get("/api/inventory")
 				.then()
+				.log().all()
 				.statusCode(200)
-				.body(is("true"));
+				// - BOOLEAN RESPONSE --
+				.body(Matchers.equalTo("true"));
+	}
+
+	@Test
+	void isNotInStockTest() throws IOException, InterruptedException {
+
+		String insertQuery = """
+				
+				INSERT INTO t_inventory (sku_code, quantity)
+				VALUES ('SKU001, 10);
+				
+				
+				""";
+		postgreSQLContainer.execInContainer(
+				"psql",
+				"-U",
+				"admin",
+				"-d",
+				"inventory-service-test",
+				"-c",
+				insertQuery);
+
+		// -- BDD STYLE TEST FOR isInStock ENDPOINT --
+		RestAssured.given()
+				.contentType("application/json")
+				.queryParam("sku_code", "SKU001")
+				.queryParam("quantity", 20)
+				.when()
+				.get("/api/inventory")
+				.then()
+				.log().all()
+				.statusCode(200)
+				// - BOOLEAN RESPONSE --
+				.body(Matchers.equalTo("false"));
+
+
 	}
 
 }
+
+

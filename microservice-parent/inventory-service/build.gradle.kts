@@ -25,45 +25,38 @@ repositories {
 }
 
 dependencies {
-
-	// SPRING BOOT
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-
-	//FLYWAY / REST-ASSURED / JETBRAINS
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.flywaydb:flyway-core")
-	implementation("io.rest-assured:rest-assured")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.flywaydb:flyway-database-postgresql")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-	// LOMBOK
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+	implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.1.2")
+	runtimeOnly("org.postgresql:postgresql")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
-
-	// DEV
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-
-	// POSTGRES RUN & TEST
-	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.testcontainers:postgresql")
-
-	// MONGO RUN & TEST
-	testImplementation("org.testcontainers:mongodb")
-
-	// TEST
-	testImplementation("org.testcontainers:junit-jupiter")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
-
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
+	testImplementation("org.junit.jupiter:junit-jupiter-engine")
+	testImplementation("io.rest-assured:rest-assured")
+	testImplementation("org.mockito:mockito-core:4.8.0")
+	testImplementation("org.testcontainers:junit-jupiter")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation("org.testcontainers:mongodb")
+	testImplementation("org.testcontainers:testcontainers")
+	testImplementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0")
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testImplementation("com.h2database:h2")
 }
-
 
 tasks.withType<Test>{
 	useJUnitPlatform()
+}
+
+tasks.bootJar {
+	mainClass.set("ca.gbc.inventoryservice.InventoryServiceApplication")
 }
 
 

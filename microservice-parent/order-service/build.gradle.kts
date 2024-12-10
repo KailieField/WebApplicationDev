@@ -2,6 +2,8 @@ plugins {
     java
     id("org.springframework.boot") version "3.3.5"
     id("io.spring.dependency-management") version "1.1.6"
+//    kotlin("jvm") version "1.9.24"
+//    kotlin("plugin.spring") version "1.9.24"
 }
 
 group = "ca.gbc"
@@ -23,37 +25,56 @@ repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.3")
+    }
+}
+
 dependencies {
 
-    // SPRING BOOT
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
-
-    // FLYWAY
     implementation("org.flywaydb:flyway-core")
-    implementation("org.postgresql:postgresql")
+    implementation("org.flywaydb:flyway-database-postgresql")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springframework.cloud:spring-cloud-starter-contract-stub-runner")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.1.2")
+    implementation("org.springframework.kafka:spring-kafka-test:3.3.0")
+    implementation("org.springframework.kafka:spring-kafka:3.3.0")
 
-    // LOMBOK
     compileOnly("org.projectlombok:lombok")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    runtimeOnly("org.postgresql:postgresql")
     annotationProcessor("org.projectlombok:lombok")
 
-    // DEV
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-
-    // TEST
-    testImplementation("io.rest-assured:rest-assured:5.3.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:postgresql")
-    testImplementation("org.testcontainers:mongodb")
+    testImplementation("com.github.tomakehurst:wiremock:3.0.1")
+    testImplementation("io.rest-assured:rest-assured")
+    testImplementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0")
+    testImplementation("org.springframework.kafka:spring-kafka-test:3.3.0")
+    testImplementation("org.testcontainers:kafka:1.20.4")
+
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
+
 
 tasks.withType<Test> {
         useJUnitPlatform()
 }
+
+tasks.bootJar {
+    mainClass.set("ca.gbc.orderservice.OrderServiceApplication") // Explicitly set the main class here
+}
+
+tasks.register("prepareKotlinBuildScriptModel") {}
+
+
 
 

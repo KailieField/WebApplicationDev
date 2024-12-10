@@ -18,5 +18,5 @@ target/
 out/
 
 # Ignore Docker-Related files
-docker-infra/data/
-docker-infra/mongo/data
+local-docker-file/data/
+local-docker-file/mongo/data

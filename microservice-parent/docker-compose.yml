@@ -9,7 +9,7 @@ services:
     container_name: product-service
     build:
       context: ./product-service
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - "8084:8084"
     environment:
@@ -23,8 +23,8 @@ services:
     image: order-service
     container_name: order-service
     build:
-      context: .
-      dockerfile: order-service/Dockerfile
+      context: ./order-service
+      dockerfile: ./Dockerfile
     ports:
       - "8085:8085"
     environment:
@@ -34,7 +34,8 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: none
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
-      - mongodb
+      - pgadmin
+      - postgres-order
     networks:
       - spring
 
@@ -42,8 +43,8 @@ services:
     image: inventory-service
     container_name: inventory-service
     build:
-      context: .
-      dockerfile: inventory-service/Dockerfile
+      context: ./inventory-service
+      dockerfile: ./Dockerfile
     ports:
       - "8086:8086"
     environment:
@@ -63,6 +64,7 @@ services:
 #---------------------------------------------------------------------------------------------------------------------
   api-gateway:
     image: api-gateway
+    container_name: api-gateway
     ports:
       - "9000:9000"
     build:
@@ -71,7 +73,6 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_APPLICATION_JSON: '{"logging":{"level":{"root":"INFO","ca.gbc.apigateway":"DEBUG"}}}'
-    container_name: api-gateway
     networks:
       - spring
 
@@ -87,8 +88,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
-      - ./docker-infra/mongo/data/db:/data/db
-      - ./docker-infra/mongo/init/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mongo-db:/data/db
+      - ./init/mongo/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:roo
     networks:
       - spring
 
@@ -137,38 +138,6 @@ services:
 #--------------------------------------------------------------------------------------------------------------------
 # POSTGRES/PGADMIN
 #---------------------------------------------------------------------------------------------------------------------
-  postgres-inventory:
-    image: postgres:latest
-    container_name: postgres-inventory
-    restart: unless-stopped # ---- better for local development
-    ports:
-      - "5434:5432"
-    environment:
-      - POSTGRES_DB=inventory-service
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=password
-    volumes:
-      - ./docker-infra/postgres/data/inventory:/var/lib/postgresql/data
-      - ./docker-infra/postgres/init/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - spring
-
-  postgres-order:
-    image: postgres:latest
-    container_name: postgres-order
-    restart: unless-stopped
-    ports:
-      - "5435:5432"
-    environment:
-      - POSTGRES_DB=order-service
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=password
-    volumes:
-      - ./docker-infra/postgres/data/order:/var/lib/postgresql/data
-      - ./docker-infra/postgres/init/order/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - spring
-
   postgres-keycloak:
     container_name: postgres-keycloak
     image: postgres
@@ -178,27 +147,45 @@ services:
       - POSTGREST_PASSWORD=password
       - PGDATA=/data/postgres
     volumes:
-      - ./docker-infra/postgres/data/postgres-keycloak:/var/lib/postgresql/data
+      - ./data/postgres/postgres-keycloak:/var/lib/postgresql/data
     ports:
       - "5431:5432"
     networks:
       - spring
 
-
-  postgres:
+  postgres-inventory:
     image: postgres
-    container_name: postgres-single-service
-    restart: unless-stopped
+    container_name: postgres-inventory
+    restart: unless-stopped # ---- better for local development
     ports:
-      - "5433:5432"
+      - "5434:5432"
     environment:
-      - POSTGRES_DB=postgres-single-service
+      - POSTGRES_DB=inventory-service
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=password
-
+      - PGDATA=/data/postgres
     volumes:
-      - ./data/postgres/single-service:/var/lib/postgresql/data
-      - ./init/postgres/single-service/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/postgres/postgres-inventory:/var/lib/postgresql/data
+      - ./init/postgres/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - spring
+
+  postgres-order:
+    image: postgres
+    container_name: postgres-order
+    restart: unless-stopped
+    ports:
+      - "5435:5432"
+    environment:
+      - POSTGRES_DB=order-service
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/data/postgres
+    volumes:
+      - ./data/postgres/postgres-order:/var/lib/postgresql/data
+      - ./init/postgres/order/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - spring
 
   pgadmin:
     image: dpage/pgadmin4
@@ -208,6 +195,51 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=user@domain.ca
       - PGADMIN_DEFAULT_PASSWORD=password
+    networks:
+      - spring
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - spring
+
+  broker:
+    image: conflientinc/cp-kafka:7.5.0
+    ports:
+      - "9092:9092" # external connections (outside of docker) use 9092 and host.docker.internal
+      - "29092:29092" # internal connections (inside docekr) and the container hostname breaker
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT, PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092, PLAINTEXT_HOST://host.docker.internal:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092, PLAINTEXT_HOST://0.0.0.0:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - zookeper
+    networks:
+      - spring
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    container_name: kafka-ui
+    ports:
+      - "8087:8087"
+    environment:
+      KAFKA_CLUSTER_NAME: local
+      KAFKA_CLUSTERS_BOOTSTRAPSERVERS: broker:29092
+      DYNAMIC_CONFIG_ENABLED: 'true'
+    depends_on:
+      - broker
+    networks:
+      - spring
+
 
 
 # ----- decoupling from host filesystem to be able to move across environments -- data persistence
@@ -223,3 +255,19 @@ networks:
 # ------ mongo-express is web based, it requires mongodb to run first when
 # ------ docker-compose.
 # ------ BOTH part of the spring network --> meaning they can communicate
+
+
+#  postgres:
+#    image: postgres
+#    container_name: postgres-single-service
+#    restart: unless-stopped
+#    ports:
+#      - "5433:5432"
+#    environment:
+#      - POSTGRES_DB=postgres-single-service
+#      - POSTGRES_USER=admin
+#      - POSTGRES_PASSWORD=password
+#
+#    volumes:
+#      - ./data/postgres/single-service:/var/lib/postgresql/data
+#      - ./docker-infra/postgres/init/postgres/single-service/init.sql:/docker-entrypoint-initdb.d/init.sql
