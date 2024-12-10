@@ -43,10 +43,10 @@ dependencies {
     implementation("io.confluent:kafka-schema-registry-client:7.7.1")
     implementation("org.apache.avro:avro:1.12.0")
 
-//    implementation(project(":shared-schema"))
+    implementation(project(":shared-schema"))
 
     compileOnly("org.projectlombok:lombok")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
+//    developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")

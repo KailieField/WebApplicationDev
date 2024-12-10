@@ -53,13 +53,13 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="Annotation" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="AnnotationClass" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="Anonymous2MethodRef" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="AnonymousClassComplexity" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true">
@@ -77,7 +77,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="AnonymousHasLambdaAlternative" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="AnonymousInnerClass" enabled="true" level="INFORMATION" enabled_by_default="true">
       <scope name="Project Files" level="INFORMATION" enabled="true" />
@@ -210,7 +210,7 @@
       <option name="ignoreLibraryOverrides" value="false" />
     </inspection_tool>
     <inspection_tool class="BadExceptionThrown" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="exceptionsString" value="" />
         <option name="exceptions">
           <value />
@@ -355,7 +355,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ChainedMethodCall" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="m_ignoreFieldInitializations" value="true" />
         <option name="m_ignoreThisSuperCalls" value="true" />
       </scope>
@@ -552,7 +552,7 @@
       <option name="m_ignoreCloneableDueToInheritance" value="true" />
     </inspection_tool>
     <inspection_tool class="CodeBlock2Expr" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="CollectionAddAllCanBeReplacedWithConstructor" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -573,7 +573,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ComparatorCombinators" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="ComparatorMethodParameterNotUsed" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -615,7 +615,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ConfusingElse" enabled="true" level="INFORMATION" enabled_by_default="true">
-      <scope name="Project Files" level="INFORMATION" enabled="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES">
         <option name="reportWhenNoStatementFollow" value="true" />
       </scope>
       <option name="reportWhenNoStatementFollow" value="true" />
@@ -686,10 +686,10 @@
       <scope name="Project Files" level="INFORMATION" enabled="true" />
     </inspection_tool>
     <inspection_tool class="Convert2Diamond" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="Convert2Lambda" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="Convert2MethodRef" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -759,7 +759,7 @@
       <scope name="Project Files" level="INFORMATION" enabled="true" />
     </inspection_tool>
     <inspection_tool class="DefaultAnnotationParam" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="DefaultNotLastCaseInSwitch" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -822,7 +822,7 @@
       <scope name="Project Files" level="WEAK WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="DuplicateStringLiteralInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="MIN_STRING_LENGTH" value="5" />
         <option name="IGNORE_PROPERTY_KEYS" value="false" />
       </scope>
@@ -830,7 +830,7 @@
       <option name="IGNORE_PROPERTY_KEYS" value="false" />
     </inspection_tool>
     <inspection_tool class="DuplicateThrows" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="DuplicatedDataProviderNames" enabled="true" level="ERROR" enabled_by_default="true">
       <scope name="Project Files" level="ERROR" enabled="true" />
@@ -855,7 +855,7 @@
       <option name="commentsAreContent" value="true" />
     </inspection_tool>
     <inspection_tool class="EmptyFinallyBlock" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="EmptyInitializer" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -867,7 +867,7 @@
       <option name="m_reportEmptyBlocks" value="true" />
     </inspection_tool>
     <inspection_tool class="EmptySynchronizedStatement" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="EmptyTryBlock" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -938,7 +938,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ExcessiveLambdaUsage" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="ExcessiveRangeCheck" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -953,7 +953,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ExplicitToImplicitClassMigration" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="ExpressionMayBeFactorized" enabled="true" level="INFORMATION" enabled_by_default="true">
       <scope name="Project Files" level="INFORMATION" enabled="true" />
@@ -1049,10 +1049,10 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="FinalMethodInFinalClass" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="FinalPrivateMethod" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="FinalStaticMethod" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -1117,7 +1117,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="HardCodedStringLiteral" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="ignoreForAssertStatements" value="true" />
         <option name="ignoreForExceptionConstructors" value="true" />
         <option name="ignoreForSpecifiedExceptionConstructors" value="" />
@@ -1404,7 +1404,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="Java9RedundantRequiresStatement" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="Java9ReflectionClassVisibility" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -1419,7 +1419,7 @@
       <scope name="Project Files" level="WEAK WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="JavaLangImport" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="JavaLangInvokeHandleSignature" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -1485,7 +1485,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="LawOfDemeter" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="ignoreLibraryCalls" value="true" />
       </scope>
       <option name="ignoreLibraryCalls" value="true" />
@@ -1518,7 +1518,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="LocalCanBeFinal" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="REPORT_VARIABLES" value="true" />
         <option name="REPORT_PARAMETERS" value="true" />
       </scope>
@@ -1614,7 +1614,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="MappingBeforeCount" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="MarkedForRemoval" enabled="true" level="ERROR" enabled_by_default="true">
       <scope name="Project Files" level="ERROR" enabled="true" />
@@ -1760,7 +1760,7 @@
       <option name="ignoreAnonymousClassMethods" value="false" />
     </inspection_tool>
     <inspection_tool class="MissingPackageInfo" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="MissingSerialAnnotation" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -1856,7 +1856,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="NestedMethodCall" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="m_ignoreFieldInitializations" value="true" />
       </scope>
       <option name="m_ignoreFieldInitializations" value="true" />
@@ -2203,7 +2203,7 @@
       <option name="limit" value="50" />
     </inspection_tool>
     <inspection_tool class="ParameterCanBeLocal" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="ParameterHidingMemberVariable" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true">
@@ -2389,7 +2389,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ReassignedVariable" enabled="true" level="TEXT ATTRIBUTES" enabled_by_default="true">
-      <scope name="Project Files" level="TEXT ATTRIBUTES" enabled="true" />
+      <scope name="Project Files" level="TEXT ATTRIBUTES" enabled="true" editorAttributes="REASSIGNED_LOCAL_VARIABLE_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RecordCanBeClass" enabled="true" level="INFORMATION" enabled_by_default="true">
       <scope name="Project Files" level="INFORMATION" enabled="true" />
@@ -2398,10 +2398,10 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="RedundantArrayCreation" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantCast" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantClassCall" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2410,10 +2410,10 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="RedundantComparatorComparing" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantCompareCall" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantCompareToJavaTime" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2428,19 +2428,19 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="RedundantExplicitClose" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantExplicitVariableType" enabled="true" level="INFORMATION" enabled_by_default="true">
-      <scope name="Project Files" level="INFORMATION" enabled="true" />
+      <scope name="Project Files" level="INFORMATION" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantFieldInitialization" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantFileCreation" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantImplements" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES">
         <option name="ignoreSerializable" value="false" />
         <option name="ignoreCloneable" value="false" />
       </scope>
@@ -2448,10 +2448,10 @@
       <option name="ignoreCloneable" value="false" />
     </inspection_tool>
     <inspection_tool class="RedundantLabeledSwitchRuleCodeBlock" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantLambdaParameterType" enabled="true" level="INFORMATION" enabled_by_default="true">
-      <scope name="Project Files" level="INFORMATION" enabled="true" />
+      <scope name="Project Files" level="INFORMATION" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantLengthCheck" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2472,7 +2472,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="RedundantRecordConstructor" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantScheduledForRemovalAnnotation" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2481,19 +2481,19 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="RedundantStreamOptionalCall" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantStringFormatCall" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="RedundantThrows" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantTypeArguments" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="RedundantUnmodifiable" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="ReflectionForUnavailableAnnotation" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2527,7 +2527,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ReplaceOnLiteralHasNoEffect" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="ReplaceWithJavadoc" enabled="true" level="INFORMATION" enabled_by_default="true">
       <scope name="Project Files" level="INFORMATION" enabled="true" />
@@ -2578,7 +2578,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="SamePackageImport" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="SameParameterValue" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2650,13 +2650,13 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="SillyAssignment" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="SimpleDateFormatWithoutLocale" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="SimplifiableAnnotation" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="SimplifiableAssertion" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -2689,7 +2689,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="SingleClassImport" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="SingleElementAnnotation" enabled="true" level="INFORMATION" enabled_by_default="true">
       <scope name="Project Files" level="INFORMATION" enabled="true" />
@@ -2743,7 +2743,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="StaticImport" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="StaticInheritance" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3122,13 +3122,13 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="TransientFieldInNonSerializableClass" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="TransientFieldNotInitialized" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="TrivialFunctionalExpressionUsage" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="TrivialIf" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3167,13 +3167,13 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UNCHECKED_WARNING" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="UNUSED_IMPORT" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnaryPlus" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UncheckedExceptionClass" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3191,13 +3191,13 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnnecessarilyQualifiedInnerClassAccess" enabled="true" level="INFORMATION" enabled_by_default="true">
-      <scope name="Project Files" level="INFORMATION" enabled="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES">
         <option name="ignoreReferencesNeedingImport" value="false" />
       </scope>
       <option name="ignoreReferencesNeedingImport" value="false" />
     </inspection_tool>
     <inspection_tool class="UnnecessarilyQualifiedStaticUsage" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES">
         <option name="m_ignoreStaticFieldAccesses" value="false" />
         <option name="m_ignoreStaticMethodCalls" value="false" />
         <option name="m_ignoreStaticAccessFromStaticContext" value="false" />
@@ -3207,7 +3207,7 @@
       <option name="m_ignoreStaticAccessFromStaticContext" value="false" />
     </inspection_tool>
     <inspection_tool class="UnnecessarilyQualifiedStaticallyImportedElement" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryBlockStatement" enabled="true" level="INFORMATION" enabled_by_default="true">
       <scope name="Project Files" level="INFORMATION" enabled="true">
@@ -3219,34 +3219,34 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryBreak" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryCallToStringValueOf" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryConstantArrayCreationExpression" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryConstructor" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryContinue" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryDefault" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryEmptyArrayUsage" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryExplicitNumericCast" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryFinalOnLocalVariableOrParameter" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryFullyQualifiedName" enabled="true" level="INFORMATION" enabled_by_default="true">
-      <scope name="Project Files" level="INFORMATION" enabled="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES">
         <option name="m_ignoreJavadoc" value="false" />
         <option name="ignoreInModuleStatements" value="true" />
       </scope>
@@ -3257,7 +3257,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryInitCause" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryJavaDocLink" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true">
@@ -3266,10 +3266,10 @@
       <option name="ignoreInlineLinkToSuper" value="false" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryLabelOnBreakStatement" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryLabelOnContinueStatement" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryLocalVariable" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true">
@@ -3280,7 +3280,7 @@
       <option name="m_ignoreAnnotatedVariables" value="false" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryModifier" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryModuleDependencyInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3296,22 +3296,22 @@
       <option name="ignoreParenthesesOnLambdaParameter" value="false" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryQualifierForThis" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryReturn" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessarySemicolon" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryStringEscape" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnnecessarySuperConstructor" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessarySuperQualifier" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryTemporaryOnConversionFromString" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3320,13 +3320,13 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryThis" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryToStringCall" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryUnaryMinus" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryUnboxing" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3343,7 +3343,7 @@
       <option name="ignoreComplexLiterals" value="false" />
     </inspection_tool>
     <inspection_tool class="UnqualifiedFieldAccess" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="UnqualifiedInnerClassAccess" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true">
@@ -3355,7 +3355,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnqualifiedStaticUsage" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="false">
         <option name="m_ignoreStaticFieldAccesses" value="false" />
         <option name="m_ignoreStaticMethodCalls" value="false" />
         <option name="m_ignoreStaticAccessFromStaticContext" value="false" />
@@ -3365,7 +3365,7 @@
       <option name="m_ignoreStaticAccessFromStaticContext" value="false" />
     </inspection_tool>
     <inspection_tool class="UnreachableCode" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnresolvedPropertyKey" enabled="true" level="ERROR" enabled_by_default="true">
       <scope name="Project Files" level="ERROR" enabled="true" />
@@ -3380,7 +3380,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UnusedAssignment" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true">
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES">
         <option name="REPORT_PREFIX_EXPRESSIONS" value="false" />
         <option name="REPORT_POSTFIX_EXPRESSIONS" value="true" />
         <option name="REPORT_REDUNDANT_INITIALIZER" value="true" />
@@ -3390,7 +3390,7 @@
       <option name="REPORT_REDUNDANT_INITIALIZER" value="true" />
     </inspection_tool>
     <inspection_tool class="UnusedLabel" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="UnusedLibrary" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3425,7 +3425,7 @@
       <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="UseOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WARNING" enabled="true" />
+      <scope name="Project Files" level="WARNING" enabled="false" />
     </inspection_tool>
     <inspection_tool class="UseOfJDBCDriverClass" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Project Files" level="WARNING" enabled="true" />
@@ -3552,7 +3552,7 @@
       </option>
     </inspection_tool>
     <inspection_tool class="unused" enabled="true" level="WARNING" enabled_by_default="true" checkParameterExcludingHierarchy="false">
-      <scope name="Project Files" level="WARNING" enabled="true" checkParameterExcludingHierarchy="false">
+      <scope name="Project Files" level="WARNING" enabled="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" checkParameterExcludingHierarchy="false">
         <option name="LOCAL_VARIABLE" value="true" />
         <option name="FIELD" value="true" />
         <option name="METHOD" value="true" />

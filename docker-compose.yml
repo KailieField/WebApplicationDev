@@ -242,6 +242,21 @@ services:
     networks:
       - spring
 
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.5.0
+    hostname: schema-registry
+    container_name: shchema-registry
+    ports:
+      - "8090:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: "broker:29092"
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+    depends_on:
+      - broker
+    networks:
+      - spring
+
 
 
 # ----- decoupling from host filesystem to be able to move across environments -- data persistence

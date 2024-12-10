@@ -1,7 +1,8 @@
 package ca.gbc.notificationservice.service;
 
 
-import ca.gbc.notificationservice.event.OrderPlacedEvent;
+
+import ca.gbc.orderservice.event.OrderPlacedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -30,14 +31,17 @@ public class NotificationService {
 			messageHelper.setSubject(String.format("Order placed for %s", orderPlacedEvent.getEmail()));
 			messageHelper.setText(String.format("""
 					
-					Good day Customer,
+					Good day %s %s,
 					
 					Your order with number %s was successfully placed.
 					
 					Thank you for yor trust!
 					COMP3095 Staff
 					
-					""", orderPlacedEvent.getOrderNumber()));
+					""",
+					orderPlacedEvent.getFirstName(),
+					orderPlacedEvent.getLastName(),
+					orderPlacedEvent.getOrderNumber()));
 
 		};
 
@@ -48,8 +52,8 @@ public class NotificationService {
 
 		} catch (MailException e) {
 
-			log.error("Exception occured when sending email.", e);
-			throw new RuntimeException("Exception occured when attempting to send the email", e);
+			log.error("Exception occurred when sending email.", e);
+			throw new RuntimeException("Exception occurred when attempting to send the email", e);
 
 		}
 	}
