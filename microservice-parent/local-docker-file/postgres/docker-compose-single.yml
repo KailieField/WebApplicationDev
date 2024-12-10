@@ -1,8 +1,3 @@
-version: '4.0'
-
-#-------------
-# SERVICES
-#-------------
 services:
 
   postgres:
@@ -10,20 +5,20 @@ services:
     container_name: postgres-single-service
     restart: unless-stopped
     ports:
-      - "5433:5432"
+      - "5432:5432"
     environment:
       POSTGRES_DB: postgres-single-service
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     volumes:
-      - ./data/postgres/single-service:/var/lib/postgresql/data
-      - ./init/postgres/single-service/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/order:/var/lib/postgresql/data
+      - ./init/order/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   pgadmin:
     image: dpage/pgadmin4
+    container_name: pgadmin-single-service
     ports:
       - "8888:80"
-    container_name: pgadmin-single-default
     environment:
       PGADMIN_DEFAULT_EMAIL: user@domain.ca
       PGADMIN_DEFAULT_PASSWORD: password

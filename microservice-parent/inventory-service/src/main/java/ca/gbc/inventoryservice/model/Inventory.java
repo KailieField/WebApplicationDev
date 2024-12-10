@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 
 
 @Entity
-@Table
+@Table(name="t_inventory")
 @Getter
 @Setter
 @NoArgsConstructor

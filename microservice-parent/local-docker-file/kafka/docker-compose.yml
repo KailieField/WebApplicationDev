@@ -4,6 +4,7 @@ services:
   zookeper:
     image: confluentince/cp-zookeeper:7.5.0
     container_name: zookeeper
+    hostname: zookeeper
     ports:
       - "2181:2182"
     environment:

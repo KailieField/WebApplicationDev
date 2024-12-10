@@ -24,27 +24,30 @@ repositories {
 }
 
 dependencies {
-
-    // SPRING BOOT
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.1.2")
 
-    // LOMBOK
     compileOnly("org.projectlombok:lombok")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
 
-    // DEV
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-
-    // TEST
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:mongodb")
+    testImplementation("io.rest-assured:rest-assured")
+    testImplementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0")
+
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.bootJar {
+    mainClass.set("ca.gbc.orderservice.OrderServiceApplication")
 }

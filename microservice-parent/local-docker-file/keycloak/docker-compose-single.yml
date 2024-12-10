@@ -1,9 +1,9 @@
 services:
+
   keycloak:
+    image: quay.io/keycloak/keycloak/:24.0.1
     container_name: keycloak
     hostname: keycloak
-    image: keycloak
-#    quay.io/keycloak/keycloak/:24.0.1
     command: ["start-dev", "--import-realm"]
     environment:
       DB_VENDOR: postgres
@@ -24,6 +24,7 @@ services:
     networks:
       - spring
 
+
   postgres-keycloak:
     image: postgres
     ports:
@@ -36,16 +37,6 @@ services:
       - PGDATA=/data/postgres
     volumes:
       - ./data/postgres/keycloak:/var/lib/postgresql/data
-
-
-#  pgadmin:
-#    image: dpage/pgadmin4
-#    ports:
-#      - "8888:80"
-#    container_name: pgadmin-single
-#    environment:
-#      - PGADMIN_DEFAULT_EMAIL=user@domain.ca
-#      - PGADMIN_DEFAULT_PASSWORD=password
 
 
 

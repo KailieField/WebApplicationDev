@@ -1,9 +1,19 @@
-version: '4.0'
-
-#-------------
-# SERVICES
-#-------------
 services:
+
+  postgres-order:
+    image: postgres
+    container_name: local-postgresdb-order
+    restart: unless-stopped
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: order-service
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./data/order:/var/lib/postgresql/data
+      - ./init/order/init.sql:/docker-entrypoint-initdb.d/init.sql
+
 
   postgres-inventory:
     image: postgres
@@ -17,26 +27,12 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     volumes:
-      - ./data/postgres/inventory:/var/lib/postgresql/data
-      - ./init/postgres/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql # mounting init.sql script
-
-  postgres-order:
-    image: postgres
-    container_name: local-postgresdb-order
-    restart: unless-stopped
-    ports:
-      - "5435:5432"
-    environment:
-      POSTGRES_DB: order-service
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
-    volumes:
-      - ./data/postgres/order:/var/lib/postgresql/data
-      - ./init/postgres/order/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/inventory:/var/lib/postgresql/data
+      - ./init/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmingui-local-multiple
+    container_name: pgadmin
     ports:
       - "8888:80"
     environment:
