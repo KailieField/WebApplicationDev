@@ -19,15 +19,15 @@ public class NotificationService {
 	private final JavaMailSender javaMailSender;
 
 	@KafkaListener(topics="order-placed")
-	public void orderPlaced(OrderPlacedEvent orderPlaceEvent) {
-		log.info("Received message from order-placed topic: {}", orderPlaceEvent);
+	public void listen(OrderPlacedEvent orderPlacedEvent) {
+		log.info("Received message from order-placed topic: {}", orderPlacedEvent);
 
 		// -- SENDING EMAIL TO CUSTOMER
 		MimeMessagePreparator messagePreparator = mimeMessage -> {
 			MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
 			messageHelper.setFrom("comp3095@georgebrown.ca");
-			messageHelper.setTo(orderPlaceEvent.getEmail());
-			messageHelper.setSubject(String.format("Order placed for %s", orderPlaceEvent.getEmail()));
+			messageHelper.setTo(orderPlacedEvent.getEmail());
+			messageHelper.setSubject(String.format("Order placed for %s", orderPlacedEvent.getEmail()));
 			messageHelper.setText(String.format("""
 					
 					Good day Customer,
@@ -37,14 +37,14 @@ public class NotificationService {
 					Thank you for yor trust!
 					COMP3095 Staff
 					
-					""", orderPlaceEvent.getOrderNumber()));
+					""", orderPlacedEvent.getOrderNumber()));
 
 		};
 
 		try {
 
 			javaMailSender.send(messagePreparator);
-			log.info("Order notification sent to {}", orderPlaceEvent.getEmail());
+			log.info("Order notification sent to {}", orderPlacedEvent.getEmail());
 
 		} catch (MailException e) {
 

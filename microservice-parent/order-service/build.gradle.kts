@@ -2,8 +2,6 @@ plugins {
     java
     id("org.springframework.boot") version "3.3.5"
     id("io.spring.dependency-management") version "1.1.6"
-//    kotlin("jvm") version "1.9.24"
-//    kotlin("plugin.spring") version "1.9.24"
 }
 
 group = "ca.gbc"
@@ -23,6 +21,9 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://packages.confluent.io/maven/")
+    }
 }
 
 dependencyManagement {
@@ -43,11 +44,15 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-contract-stub-runner")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.1.2")
-    implementation("org.springframework.kafka:spring-kafka-test:3.3.0")
+    implementation("org.springframework.kafka:spring-kafka-test:")
     implementation("org.springframework.kafka:spring-kafka:3.3.0")
 
+    implementation("io.confluent:kafka-avro-serializer:7.7.1")
+    implementation("io.confluent:kafka-schema-registry-client:7.7.1")
+    implementation("org.apache.avro:avro:1.12.0")
+
     compileOnly("org.projectlombok:lombok")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
+//    developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("org.postgresql:postgresql")
     annotationProcessor("org.projectlombok:lombok")
 
@@ -55,10 +60,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:postgresql")
-    testImplementation("com.github.tomakehurst:wiremock:3.0.1")
+//    testImplementation("com.github.tomakehurst:wiremock:3.0.1")
     testImplementation("io.rest-assured:rest-assured")
     testImplementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0")
-    testImplementation("org.springframework.kafka:spring-kafka-test:3.3.0")
     testImplementation("org.testcontainers:kafka:1.20.4")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -73,7 +77,6 @@ tasks.bootJar {
     mainClass.set("ca.gbc.orderservice.OrderServiceApplication") // Explicitly set the main class here
 }
 
-tasks.register("prepareKotlinBuildScriptModel") {}
 
 
 

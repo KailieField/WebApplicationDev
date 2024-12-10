@@ -1,4 +1,4 @@
-INSERT INTO t_inventory(quantity, skuCode)
+INSERT INTO t_inventory (quantity, skucode)
 VALUES
     (100, 'SKU001'),
     (200, 'SKU002'),

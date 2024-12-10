@@ -1,1 +1,3 @@
-rootProject.name = "api-gateway"
+rootProject.name = "microservice-parent"
+
+include("api-gateway")

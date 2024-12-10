@@ -3,41 +3,42 @@
 #----------------------------------------------------------------------------------------------------
 # SERVICES
 # ------ ISOLATED SPIN OF MONGODB & MONGO-EXPRESS / DEBUG
-# ------ to execute: docker-compose -f docker-compose.yml up -d
+# ------ to execute: docker-compose -f docker-compose.yml up --build -d
 #----------------------------------------------------------------------------------------------------
 services:
 
   mongodb:
     image: mongo:latest
-    container_name: mongodb-isolated
     ports:
-      - "27018:27017"
+      - "27017:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: password
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
-      - ./data/db:/data/db # ---- persist MongoDB files within isolation
-      - ./init/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+      - ./data/mongo/products:/data/db
+      - ./init/mongo/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
       - spring
 
   mongo-express:
     image: mongo-express
-    container_name: mongo-express-isolated
     ports:
-      - "8082:8081"
+      - "8081:8081"
     environment:
-      ME_CONFIG_MONGODB_SERVER=: mongodb
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: password
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    container_name: local-mongo-express
     depends_on:
-      - mongodb #<--- ensuring mongoDB starts first
+      - mongodb
     networks:
-      - debug
+      - spring
 
+
+volumes:
+  mongo-db:
+    driver: local
 
 networks:
-  debug:
+  spring:
     driver: bridge

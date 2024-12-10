@@ -1,1 +1,3 @@
-rootProject.name = "notification-service"
+rootProject.name = "microservice-parent"
+
+include("notification-service")
