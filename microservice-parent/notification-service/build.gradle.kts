@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(22)
+        languageVersion = JavaLanguageVersion.of(23)
     }
 }
 
@@ -19,7 +19,6 @@ configurations {
     }
 }
 
-
 repositories {
     mavenCentral()
     maven {
@@ -27,7 +26,11 @@ repositories {
     }
 }
 
+
+
 dependencies {
+
+
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-mail")
@@ -35,9 +38,17 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.1.2")
     implementation("org.springframework.kafka:spring-kafka:3.3.0")
+
+    implementation("io.confluent:kafka-avro-serializer:7.7.1")
+    implementation("io.confluent:kafka-schema-registry-client:7.7.1")
+    implementation("org.apache.avro:avro:1.12.0")
+
+    implementation(project(":shared-schema"))
+
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.springframework.kafka:spring-kafka-test")

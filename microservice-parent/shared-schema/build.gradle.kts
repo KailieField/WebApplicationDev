@@ -6,6 +6,12 @@ plugins {
 group = "ca.gbc"
 version = "0.0.1-SNAPSHOT"
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
 repositories {
     mavenCentral()
 }
